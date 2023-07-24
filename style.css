@@ -19,6 +19,22 @@ body {
     font-display: swap;
     src: url("bebas-neue-bold.woff2") format("woff2");
   }
+  @font-face {
+    font-style: normal;
+    font-weight: 400;
+    font-family: "Monserat";
+  
+    font-display: swap;
+    src: url("Montserrat-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-style: normal;
+    font-weight: 900;
+    font-family: "Monserat";
+  
+    font-display: swap;
+    src: url("Montserrat-Black.woff2") format("woff2");
+  }
 
 .visualy-hidden {
     clip: rect(0 0 0 0);
@@ -157,30 +173,131 @@ body {
 
 /* ///// */
 .voice {
-    min-height: 1000px;
     position: relative;
+    overflow: hidden;
+    padding: 50px;
+    background-color: #181818;
+    background-image: url("voice-background.svg");
+
+    display: grid;
+    grid-template-columns: 4fr 3fr 4fr;
+    grid-template-rows: min-content min-content min-content;
+
+    @media (max-width:768px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content 756.218px  min-content min-content;
+    }
 }
 .hole {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 120px;
-    height: 80px;
+    bottom: 10px;
+    width: 194px;
+    height: 61px;
     background-color: black;
     border-radius: 50%;
     opacity: 0;
     transform: scale(0);
     z-index: 1;
+    left: 84px;
   }
 
-  .girl {
+.girl {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 100px;
-    height: 150px;
-    background-color: pink;
-    opacity: 0;
-    transform: scale(0);
-    z-index: 2;
+    bottom: -900px;
+    width: 435px;
+    height: 790.644px;
+    z-index: 10;
   }
+
+.voice__title {
+    color: #FFF;
+    font-family: "Monserat","Arial", sans-serif;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    
+    @media (max-width:768px) {
+        font-size: 34px;
+        line-height: 100%;
+    }
+}
+
+.voice__description {
+    color: #FFF;
+    font-family: "Monserat","Arial", sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%; 
+
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    @media (max-width:768px) {
+        font-size: 16px;
+    }
+}
+
+.vocie__message {
+    color: #FFF;
+    font-family: "Monserat","Arial", sans-serif;
+    font-size: 61.416px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+
+    grid-column: 1/2;
+    grid-row: 3/4;
+
+    @media (max-width:768px) {
+        font-size: 38.655px;
+        grid-row: 5/6;
+    }
+}
+
+.voice__animation-container {
+    position: relative;
+    grid-column: 2/3;
+    grid-row: 1/4;
+    overflow: hidden;
+
+    @media (max-width:768px) {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+}
+.voice__interface {
+    grid-column: 3/4;
+    grid-row: 1/4;    
+    @media (max-width:768px) {
+        grid-column: 1/2;
+        grid-row: 4/5;
+        width: 320px;
+        height: auto;
+    }
+
+}
+
+.voice__message-text-first {
+    font-size: 44.791px;
+    @media (max-width:768px) {
+        font-size: 38.655px;
+    }
+}
+
+.voice__message-text-second {
+    font-size: 61.416px;
+}
+
+.voice__message-text-third {
+    font-size: 61.416px;
+    @media (max-width:768px) {
+        font-size: 49.856px;
+    }
+
+}

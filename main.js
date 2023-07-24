@@ -3,54 +3,52 @@
     const moveUpBtn = document.getElementById("moveUpBtn");
     const moveDownBtn = document.getElementById("moveDownBtn");
     
-
-    // Функция для поднятия картинки
     function moveUp() {
       const screenWidth = window.innerWidth;
       if (screenWidth > 768) {
       gsap.to(image, {
-        y: -100, // сдвиг вверх на 100 пикселей
-        duration: 1 // длительность анимации в секундах
+        y: -100, 
+        duration: 1 
       });
     } else  {
         gsap.to(image, {
-            y: -10, // сдвиг вверх на 100 пикселей
-            duration: 1 // длительность анимации в секундах
+            y: -10,
+            duration: 1 
           });
     }
     }
 
-    // Функция для опускания картинки
     function moveDown() {
       gsap.to(image, {
-        y: 0, // сдвиг вниз на 0 пикселей (исходное положение)
-        duration: 1 // длительность анимации в секундах
+        y: 0, 
+        duration: 1 
       });
     }
 
-    // Привязываем обработчики событий к кнопкам
+
     moveUpBtn.addEventListener("click", moveUp);
     moveDownBtn.addEventListener("click", moveDown);
 
 
-
+// voice
     const hole = document.querySelector(".hole");
     const girl = document.querySelector(".girl");
 
-    // Анимация появления отверстия
+
     gsap.to(hole, {
       duration: 1,
-      scale: 1,
+      scale: 1.3,
       opacity: 0.8,
       onComplete: function() {
-        // Анимация появления девушки и движения вверх
         gsap.to(girl, {
           duration: 1,
-          scale: 1,
-          opacity: 1,
-          y: -100,
+          y: -900,
           onComplete: function() {
-            // Анимация движения девушки влево
+            gsap.to(hole, {
+                duration: 1,
+                scale: 1,
+                opacity: 0.8,
+            })
             gsap.to(girl, {
               duration: 1,
               x: -50,
