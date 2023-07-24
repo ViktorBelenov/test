@@ -1,0 +1,186 @@
+
+body {
+    background-color: #f0f0f0;
+}
+
+@font-face {
+    font-style: normal;
+    font-weight: 300;
+    font-family: "Ububntu";
+  
+    font-display: swap;
+    src: url("Ubuntu-Light.woff2") format("woff2");
+  }
+  @font-face {
+    font-style: normal;
+    font-weight: 700;
+    font-family: "Bebas";
+  
+    font-display: swap;
+    src: url("bebas-neue-bold.woff2") format("woff2");
+  }
+
+.visualy-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.table {
+    background: #F3F3F3;
+}
+
+.table__wrapper{
+  padding:35px 350px 35px 35px;
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+  gap: 10px;
+  grid-template-columns: min-content 1fr;
+    
+
+  @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      padding:12px;
+  }
+}
+.table__title {
+  margin: 0;
+
+
+  color: #0B64FE;
+  font-family: "Ubuntu","Arial", sans-serif;
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 100%;
+
+  @media (max-width: 768px) {
+    font-family: "Bebas","Arial", sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+}
+
+}
+
+.table__content {
+  color: #181818;
+  font-family: "Ubuntu","Arial", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 170%;
+  margin: 0;
+
+  @media (max-width: 768px) {
+  font-size: 16px;
+}
+
+}
+
+.table__content--second {
+    grid-column:2/3;
+
+    
+  @media (max-width: 768px) {
+    grid-column:1/2;
+    grid-row: 4/5;
+}
+}
+
+
+.table__animation-container{
+  background-image: url("table-down.png");
+  background-repeat: no-repeat;
+  background-size: 975.792px;
+  background-position: bottom 177px right 0px;
+  position: relative;
+
+
+  grid-column: 1/2;
+  grid-row: 1/4;
+
+    @media (max-width: 768px) {
+        grid-row: 3/4;
+        background-size: 320px;
+        background-position: bottom 30px right 0px;
+    }
+}
+
+.table__animation-img {
+  @media (max-width:768px) {
+    width: 320px;
+    height: 260px;
+  }
+}
+
+.table__animation-button {
+  background-color: #A6FFFF;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: 0;
+  color: #000;
+
+  font-family: "Ubuntu","Arial", sans-serif;
+  font-size: 12.275px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 170%;
+
+  @media (max-width:768px) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.tabel__button-container {
+  position: absolute;
+  bottom: 300px;
+  left: 350px;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+
+  @media (max-width:768px) {
+    width: 70px;
+    height: 70px;
+    bottom: 0;
+    left: 120px;
+  }
+
+}
+
+/* ///// */
+.voice {
+    min-height: 1000px;
+    position: relative;
+}
+.hole {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 120px;
+    height: 80px;
+    background-color: black;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    z-index: 1;
+  }
+
+  .girl {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    height: 150px;
+    background-color: pink;
+    opacity: 0;
+    transform: scale(0);
+    z-index: 2;
+  }
